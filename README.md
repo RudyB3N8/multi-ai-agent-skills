@@ -8,7 +8,7 @@ Ce dépôt sert à stocker, versionner et partager les différentes compétences
 
 *   **[Créateur de compétences (`createur-de-competences`)](./createur-de-competences/SKILL.md)** : Compétence universelle (méta-compétence) pour concevoir, structurer et générer de nouvelles compétences multi-IA (Google Antigravity, GitHub Copilot, ChatGPT/Codex) selon le standard Open Agent Skills.
 *   **[UI/UX Pro Max (`ui-ux-pro-max`)](./ui-ux-pro-max/SKILL.md)** : Génère des systèmes de design intelligents et recommande des styles UI, palettes de couleurs et typographies adaptés à chaque projet.
-*   **[Brainstorming (`brainstorming`)](./brainstorming/SKILL.md)** : À utiliser obligatoirement AVANT tout travail créatif. Permet d'explorer l'intention de l'utilisateur, les exigences et le design avant l'implémentation. Inclut un assistant visuel sur navigateur Web.
+*   **[Grill-Me (`grill-me`)](./grill-me/SKILL.md)** : Mène une interview technique approfondie et contradictoire (grilling) pour explorer les alternatives d'architecture, débusquer les angles morts et verrouiller le design avant de coder.
 *   **[Assistant Aura.build (`aura-build-assistant`)](./aura-build-assistant/SKILL.md)** : Assiste l'utilisateur dans la conception de prompts optimisés pour l'IA d'Aura.build et dans l'importation propre du code généré (HTML, Tailwind CSS, JS) dans un dossier de staging local, avec option d'extraction SCSS.
 
 ## 🛠️ Structure d'une compétence
