@@ -11,14 +11,22 @@ L'objectif est de concevoir des compétences modulaires, propres et directement 
 
 ---
 
-## 1. Protocole de cadrage interactif (OBLIGATOIRE AVANT DE CODER)
+## 1. Protocole de cadrage interactif par Rounds (OBLIGATOIRE AVANT DE CODER)
 
-Avant de commencer la rédaction du moindre fichier ou de générer l'arborescence, tu dois obligatoirement analyser la demande et poser des questions de cadrage pour lever toutes les ambiguïtés :
+Avant de commencer la rédaction du moindre fichier ou de générer l'arborescence, tu dois obligatoirement cadrer le besoin pour lever les zones d'ombre. Ne fixe aucun quota artificiel de questions ; applique la **Definition of Ready** basée sur les 4 piliers indispensables :
 
-- **Pour une compétence simple** (tâche atomique, sans scripts exécutables ni dépendances externes) :
-  👉 Tu dois poser **exactement 5 questions ciblées** (déclencheurs précis, entrées/sorties attendues, comportement en cas d'erreur, emplacement souhaité, formatage des réponses).
-- **Pour une compétence complexe** (plusieurs étapes, scripts exécutables, manipulation de fichiers, arbres de décision, dépendances ou packaging spécifique) :
-  👉 Tu dois poser **exactement 10 questions approfondies** (architecture, choix des outils, sécurité, gestion du contexte, portabilité, tests et cas limites).
+### Les 4 Piliers indispensables :
+1. **Déclencheurs & Rôle :** Quel est l'objectif exact et les mots-clés de déclenchement (*front-loading* pour la description) ?
+2. **Contrat d'Entrée / Sortie :** Quelles données/fichiers l'agent reçoit-il et quels résultats concrets produit-il ?
+3. **Outillage & Emplacement :** Faut-il des scripts (`scripts/`), des templates (`resources/`) ou des fiches de référence ? Où stocker la compétence (Projet dans `.agents/skills` ou Global) ?
+4. **Robustesse & Cas limites :** Comment l'agent réagit-il aux erreurs, dépendances manquantes ou comportements inattendus ?
+
+### Règles de l'interview par Rounds :
+- **Anti-redondance :** Analyse d'abord le prompt initial et la base de code. Ne pose JAMAIS de questions sur les éléments déjà explicites ou déductibles.
+- **Rounds calibrés (2 à 4 questions max par message) :** Regroupe les questions restantes par niveau logique pour ne jamais submerger l'utilisateur d'un coup.
+- **Smart Defaults (Recommandation systématique) :** Chaque question DOIT comporter une option recommandée clairement identifiée (ex: `Option A (Recommandé) : ...`), permettant à l'utilisateur de valider d'un simple accord global.
+- **Condition d'arrêt naturelle :** Dès que les 4 piliers sont verrouillés (souvent en 1 seul round pour un besoin clair, 2 à 3 rounds pour un besoin complexe), l'interview s'arrête et tu passes à la génération.
+- **Clause Fast-Forward :** Si l'utilisateur répond *"Passe à la génération avec tes recommandations"*, arrête immédiatement l'interview et génère la compétence avec tes choix recommandés.
 
 > **Important :** Ne commence l'implémentation qu'après avoir reçu et validé les réponses de l'utilisateur.
 
@@ -111,10 +119,10 @@ Si l'utilisateur demande une optimisation ou un packaging dédié à une IA en p
 
 Quand l'utilisateur te demande de créer ou modifier une compétence :
 
-1. **Analyser et Catégoriser :** Évalue si la compétence est simple ou complexe.
-2. **Cadrage interactif obligatoire :**
-   - Pose **5 questions** pour une compétence simple.
-   - Pose **10 questions** pour une compétence complexe.
+1. **Analyser le besoin initial :** Évalue les informations déjà fournies et identifie les zones d'ombre parmi les 4 piliers clés.
+2. **Cadrage interactif dynamique par Rounds :**
+   - Mène l'interview par rounds courts (2 à 4 questions ciblées max avec options recommandées).
+   - Arrête l'interview dès que les 4 piliers (Déclencheurs, E/S, Outillage/Emplacement, Robustesse) sont verrouillés.
 3. **Valider les choix :**
    - L'environnement cible (Universel par défaut, ou Antigravity / Copilot / ChatGPT).
    - L'emplacement (Projet dans `.agents/skills/` ou Global).
